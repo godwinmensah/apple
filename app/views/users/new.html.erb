@@ -1,0 +1,18 @@
+<h1>Hey, sign up!</h1>
+<% if flash[:alert] %>
+  <p><%= flash[:alert] %></p>
+<% end %>
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <p><%= pluralize(@user.errors.count, 'error') %>. Please fix.</p>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <div><%= f.email_field :email, placeholder: "e.g. user@test.com", required: true %></div>
+  <div><%= f.password_field :password, required: true %></div>
+  <div><%= f.password_field :password_confirmation, required: true %></div>
+  <div><%= f.submit "Create account" %></div>
+<% end %>
