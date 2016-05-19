@@ -11,8 +11,8 @@
       <% end %>
     </ul>
   <% end %>
-  <div><%= f.email_field :email, placeholder: "e.g. user@test.com", required: true %></div>
-  <div><%= f.password_field :password, required: true %></div>
-  <div><%= f.password_field :password_confirmation, required: true %></div>
+  <div>Email<br><%= f.email_field :email, placeholder: "e.g. user@test.com", required: true %></div>
+  <div>Password<br><%= f.password_field :password, required: true %></div>
+  <div>Confirm Password<br><%= f.password_field :password_confirmation, required: true %></div><br>
   <div><%= f.submit "Create account" %></div>
 <% end %>
